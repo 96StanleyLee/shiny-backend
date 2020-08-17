@@ -12,7 +12,6 @@ class UsersController < ApplicationController
         else
             render json: {error: 'User not found'}
         end 
-
     end 
 
 end
