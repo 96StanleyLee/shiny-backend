@@ -7,8 +7,8 @@ class ApplicationController < ActionController::API
 
     def authenticated
         unless current_user
-            render json: {error: 'Please Login'}, status :unauthorized
+            render json: {error: 'Please Login'}, status: :unauthorized
         end
     end
-    
+
 end
