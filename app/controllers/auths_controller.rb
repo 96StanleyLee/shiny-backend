@@ -2,9 +2,9 @@ class AuthsController < ApplicationController
     before_action :authenticated, only: [:autologin]
 
     def login
-        user = User.find_by(username: params[:email])
+        user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
-            session[:user_id] = user.user.id 
+            session[:user_id] = user.id 
             render json: user 
         else
             render json: {error: 'Invalid email or password', status: :unauthorized}
